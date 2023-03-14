@@ -30,26 +30,16 @@ switch (cod) {
                 for (let elem = 0; elem < newArrs.length; elem++) {
                     findIndex (newArrs, elem, ++elem2);     
                 }
-                console.log('Уникальный массив выглядит так   ' + newArrs);
+                console.log('Уникальный массив выглядит так :  ' + newArrs);
                 
     break;
-    case '2' :   let newArrs1 = insertData(); 
-
-                // let elem2 = prompt ('Введите элемент массива');
-                // let newArrs2 =[];
-                // let newArrs2Revers =[];
-                // let elemArray;
-                // let i=0;
-                //     while (elem2 !== null) {
-                //             newArrs2.push(elem2);
-                //             elem2 = prompt ('Введите элемент массива');
-                //         }
-                //         console.log('исходный  '+ newArrs2);
-
-                //         while (newArrs2.length) {
-                //             newArrs2Revers.unshift(newArrs2.shift());
-                //         }                                 
-                //     console.log('получивш' + newArrs2Revers);
+    case '2' :  let newArrs1 = insertData(); 
+                let elem3; 
+                let newArrs2 = [];
+                while (newArrs1.length) {
+                    newArrs2.push(newArrs1.pop());
+                }
+                console.log("Реверсивный массив: "+newArrs2)
                
     break;
     case '3' : console.log(cod); 
