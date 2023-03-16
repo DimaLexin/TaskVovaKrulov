@@ -51,7 +51,21 @@ switch (cod) {
                 console.log("Реверсивный массив: "+newArrs2)
                
     break;
-    // case '3' :  insertDataArray();  console.log("Реверсивный массив: "+insertDataArray());
+    case '3' :  let elem;
+                let arrInput = []; 
+                arrInput.length = 2;
+                for (let i = 0; i <= 1; i++){
+                    let elem = prompt ('Введите элемент массива');
+                    arrInput[i] = elem;
+                    console.log("добавили "+ arrInput);
+                }
+
+                 console.log("Полученный 1й массив: "+ arrInput);
+                         
+               
+                
+
+    // insertDataArray();  console.log("Реверсивный массив: "+insertDataArray());
     break;
     case 'null' : console.log(cod); 
     break;
