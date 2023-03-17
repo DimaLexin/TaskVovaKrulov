@@ -12,14 +12,18 @@ function insertData () {
         return inputArrs;
      };
 
-     function insertDataArray () {
-        let inputDataArr =[]; 
-        let elem = prompt ('Введите элемент массива');
-        for (i = 0; i <= numbElem; i++) {
-            inputDataArr.push([]);
-        }
-        return inputDataArrs;
-     };
+     function insertDataArray (elem) {
+        let arrInput = []; 
+        arrInput.length = 2;
+            for (let i = 0; i <= 1; i++){
+                arrInput[i] = elem;
+                elem = prompt ('Введите элемент массива');
+            }
+            return arrInput;
+        } ; 
+               
+
+
 
  function findIndex (myArray, numberElemarray, indexArray) {
                     let index = myArray.indexOf(myArray[numberElemarray],indexArray);
@@ -51,21 +55,39 @@ switch (cod) {
                 console.log("Реверсивный массив: "+newArrs2)
                
     break;
-    case '3' :  let elem;
-                let arrInput = []; 
-                arrInput.length = 2;
-                for (let i = 0; i <= 1; i++){
-                    let elem = prompt ('Введите элемент массива');
-                    arrInput[i] = elem;
-                    console.log("добавили "+ arrInput);
-                }
+     case '3' :     
+                    let resultArray =[];
+                    let objArray = {};
+                    let stop;
 
-                 console.log("Полученный 1й массив: "+ arrInput);
-                         
-               
-                
+                    function fillArray () {
+                        let arrInput = []; 
+                        let resultArray = []; 
+                        arrInput.length = 2;
+                        let elem;
+                        for (let i = 0; i <= 1; i++){
+                            elem = prompt ('Введите элемент массива');
+                            arrInput[i] = elem;
+                            console.log("Получен элемент   "+arrInput[i]); 
+                        }
+                            console.log(arrInput);
+                            return arrInput;
+                    }  
 
-    // insertDataArray();  console.log("Реверсивный массив: "+insertDataArray());
+                    resultArray.push(fillArray(resultArray));
+                    alert ('Введите элемент следующего массива');
+                    resultArray.push(fillArray(resultArray));
+                    stop = prompt ('Если будет еще массив нажмите любую кнопку кроме Esc');
+                    while (stop!==null) {
+                        resultArray.push(fillArray(resultArray));
+                        stop = prompt ('Если будет еще массив внесите первый его элемент, иначе ESC');
+                    }
+                   
+                    for (key in resultArray) {
+                        objArray[resultArray [key][0]] = resultArray [key][1];                  
+                    }
+                    console.log("Полученный объект   "+objArray);
+                            
     break;
     case 'null' : console.log(cod); 
     break;
