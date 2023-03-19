@@ -1,12 +1,10 @@
 
-// let newArrs, inputArrs =[];
-
 function insertData () {
-        let elem = prompt ('Введите элемент массива');
+        let elem = prompt ('Введите элемент');
         let inputArrs =[];
             while (elem !== null) {
                 inputArrs.push(elem);
-                    elem = prompt ('Введите элемент массива');
+                    elem = prompt ('Введите элемент');
                 }
                 console.log('Введенные данные:   '+inputArrs);
         return inputArrs;
@@ -34,7 +32,7 @@ function insertData () {
                 };
 
 let cod = prompt
-('Введите код задания\n 1-На вход поступает массив, вывести массив, удалив неуникальные значения\n 2-На вход поступает массив, реверсировать значения (подобно методу reverse) метод reverse не использовать\n 3-На вход поступает массив, содержащий массивы, в которых хранится два элемента. Преобразовать массив в объект, где ключами являются нулевой индекс вложенных массивов, а значениями являются элементы с индексом один.\n Esc-Выход');
+('Введите код задания\n 1-На вход поступает массив, вывести массив, удалив неуникальные значения\n 2-На вход поступает массив, реверсировать значения (подобно методу reverse) метод reverse не использовать\n 3-На вход поступает массив, содержащий массивы, в которых хранится два элемента. Преобразовать массив в объект, где ключами являются нулевой индекс вложенных массивов, а значениями являются элементы с индексом один.\n 4-На вход поступает объект, вывести сумму числовых свойств объекта.\n Esc-Выход');
 switch (cod) {
     case '1' :  
                 let newArrs = insertData(); 
@@ -88,6 +86,30 @@ switch (cod) {
                     }
                     console.log("Полученный объект   "+objArray);
                             
+    break;
+
+    case '4' :  let inputObj ={};
+                let number = 0,
+                    summ= 0;
+                let userInput =prompt("Введите ЛЮБЫЕ(строчные и цифровые) значение:");
+                while (userInput !== null) {
+                    let inputAsNumber = parseFloat(userInput);
+
+                    if (!isNaN(inputAsNumber)) {
+                        inputObj[`key${number}`] = inputAsNumber;
+                        summ = summ + inputObj[`key${number}`];
+                    } else {
+                        inputObj[`key${number}`] = userInput;
+                    }
+                    number++;
+                    userInput =prompt("Введите значение:");
+                }
+                console.log(inputObj); 
+                console.log(`Сумма численных св-в объекта составила: ${summ}`); 
+
+    break;
+    case '5' :   
+
     break;
     case 'null' : console.log(cod); 
     break;
