@@ -1,5 +1,5 @@
 
-function insertData () {
+    function insertData () {
         let elem = prompt ('Введите элемент');
         let inputArrs =[];
             while (elem !== null) {
@@ -20,10 +20,7 @@ function insertData () {
             return arrInput;
         } ; 
                
-
-
-
- function findIndex (myArray, numberElemarray, indexArray) {
+     function findIndex (myArray, numberElemarray, indexArray) {
                     let index = myArray.indexOf(myArray[numberElemarray],indexArray);
                         while (index > 0) {
                             myArray.splice (index,1);
@@ -32,7 +29,7 @@ function insertData () {
                 };
 
 let cod = prompt
-('Введите код задания\n 1-На вход поступает массив, вывести массив, удалив неуникальные значения\n 2-На вход поступает массив, реверсировать значения (подобно методу reverse) метод reverse не использовать\n 3-На вход поступает массив, содержащий массивы, в которых хранится два элемента. Преобразовать массив в объект, где ключами являются нулевой индекс вложенных массивов, а значениями являются элементы с индексом один.\n 4-На вход поступает объект, вывести сумму числовых свойств объекта.\n Esc-Выход');
+('Введите код задания\n 1-На вход поступает массив, вывести массив, удалив неуникальные значения\n 2-На вход поступает массив, реверсировать значения (подобно методу reverse) метод reverse не использовать\n 3-На вход поступает массив, содержащий массивы, в которых хранится два элемента. Преобразовать массив в объект, где ключами являются нулевой индекс вложенных массивов, а значениями являются элементы с индексом один.\n 4-На вход поступает объект, вывести сумму числовых свойств объекта.\n 5-На вход поступает массив с числами, вывести среднее арифметическое элементов массива\n 6-6. Функция принимает смешанный массив (содержащий значения чисел, строк и объектов), вернуть объект с полями numbers, strings и objects, содержащими массив со значениями, соответствующими названию поля.\n Esc-Выход');
 switch (cod) {
     case '1' :  
                 let newArrs = insertData(); 
@@ -108,8 +105,15 @@ switch (cod) {
                 console.log(`Сумма численных св-в объекта составила: ${summ}`); 
 
     break;
-    case '5' :   
-
+    case '5' :  let result = 0;
+                let inputDigits = insertData();
+                inputDigits.forEach((inputDigit,index)=> {
+                    result = result + Number(inputDigits[index]);
+                });
+                result = result/inputDigits.length;
+                console.log(`Среднее значение элементов массива  ${result}`);         
+    break;
+    case '6' :           
     break;
     case 'null' : console.log(cod); 
     break;
