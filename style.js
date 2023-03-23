@@ -201,15 +201,19 @@ switch (cod) {
                                     if (findIndex ==-1) {
                                         console.log(`Вводимые слова не могут быть анаграммами, т.к во втором слове отсутсвует буква  ${firstStrArrElem} `);
                                         return false; 
-                                    }  else secondStrArr.splice(findIndex,1);                     
+                                    }  else {
+                                        secondStrArr.splice(findIndex,1); 
+                                       }                       
                             });
                             console.log(`Вводимые слова анаграммы`);
-                            return true;
+                            return true;   
                         };
                 }
-
-                
-                
+       
+    break;
+    case '9' :  
+    break;
+    case '10' : 
     break;
     case 'null' : console.log(cod); 
     break;
