@@ -173,9 +173,37 @@ switch (cod) {
                 console.log(trackArray(NewArr,firstRange,secondRange));               
     break;
     case '8' : 
-               
-                
+                let firstStrArr = [];
+                let secondStrArr = [];
+                const inputStr = elem => {
+                    while ((!isNaN(parseFloat(elem))) || (elem == null)) {
+                        elem = prompt("Введите строку");
+                    }
+                    return elem.toLowerCase(); 
+                };          
 
+                let firstStr = inputStr(prompt("Введите строку"));
+                let secondStr = inputStr(prompt("Введите строку"));
+                firstStrArr = firstStr.split('');
+                console.log(firstStrArr);
+                secondStrArr = secondStr.split('');
+                console.log(secondStrArr);
+
+                
+                if (firstStrArr.length !== secondStrArr.length ) {
+                    console.log( "Вводимые слова разной длины, а значит не они не могут быть анаграммами");  
+                } else {
+                    firstStrArr.forEach((firstStrArrElem, index)=> {
+                        let findIndex = secondStrArr.indexOf(firstStrArrElem);
+                            if (findIndex ==-1) {
+                                console.log(`Вводимые слова не могут быть анаграммами, т.к во втором слове отсутсвует буква  ${firstStrArrElem} `);
+                                return; 
+                            }  else secondStrArr.splice(findIndex,1);                     
+                    });
+                    console.log(`Вводимые слова анаграммы`);
+                };
+                
+                
     break;
     case 'null' : console.log(cod); 
     break;
