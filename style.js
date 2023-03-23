@@ -184,24 +184,30 @@ switch (cod) {
 
                 let firstStr = inputStr(prompt("Введите строку"));
                 let secondStr = inputStr(prompt("Введите строку"));
-                firstStrArr = firstStr.split('');
-                console.log(firstStrArr);
-                secondStrArr = secondStr.split('');
-                console.log(secondStrArr);
 
-                
-                if (firstStrArr.length !== secondStrArr.length ) {
-                    console.log( "Вводимые слова разной длины, а значит не они не могут быть анаграммами");  
-                } else {
-                    firstStrArr.forEach((firstStrArrElem, index)=> {
-                        let findIndex = secondStrArr.indexOf(firstStrArrElem);
-                            if (findIndex ==-1) {
-                                console.log(`Вводимые слова не могут быть анаграммами, т.к во втором слове отсутсвует буква  ${firstStrArrElem} `);
-                                return; 
-                            }  else secondStrArr.splice(findIndex,1);                     
-                    });
-                    console.log(`Вводимые слова анаграммы`);
-                };
+                console.log(checkAnaghram(firstStr,secondStr));
+
+                function checkAnaghram (Str1, Str2) {
+                    firstStrArr = firstStr.split('');
+                    console.log(firstStrArr);
+                    secondStrArr = secondStr.split('');
+                    console.log(secondStrArr);
+                        if (firstStrArr.length !== secondStrArr.length ) {
+                            console.log( "Вводимые слова разной длины, а значит не они не могут быть анаграммами"); 
+                            return false; 
+                        } else {
+                            firstStrArr.forEach((firstStrArrElem, index)=> {
+                                let findIndex = secondStrArr.indexOf(firstStrArrElem);
+                                    if (findIndex ==-1) {
+                                        console.log(`Вводимые слова не могут быть анаграммами, т.к во втором слове отсутсвует буква  ${firstStrArrElem} `);
+                                        return false; 
+                                    }  else secondStrArr.splice(findIndex,1);                     
+                            });
+                            console.log(`Вводимые слова анаграммы`);
+                            return true;
+                        };
+                }
+
                 
                 
     break;
